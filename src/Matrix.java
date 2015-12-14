@@ -39,11 +39,10 @@ public class Matrix {
 
     public void multiply(Matrix B, int row, int col) throws IOException {
         int[][] result = new int[row][col];
-            for (int r = 0; r < row; r++) {
-                for (int c = 0; c < col; c++) {
+            for (int r = 0; r <= row; r++) {
+                for (int c = 0; c <= col; c++) {
                     result[r][c] = (matrix[r][c] * B.matrix[r][c])
-                            + (matrix[r][c+1] * B.matrix[r+1][c])
-                            + (matrix[r][c+2] * B.matrix[r+2][c]);
+                    + (matrix[r][c+1] * B.matrix[r+1][c]);
                 }
             }
         for (int i=0; i < result.length; i++)
